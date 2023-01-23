@@ -10,7 +10,7 @@ CREATE TYPE WISH_STATUS AS ENUM ('asked', 'granted', 'denied');
 CREATE TABLE IF NOT EXISTS wish (
     wish_id INT GENERATED ALWAYS AS IDENTITY,
     wish_text VARCHAR(500) NOT NULL,
-    created_at TIMESTAMP,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
     wish_status WISH_STATUS DEFAULT 'asked',
     votes_grant INT DEFAULT 0,
     votes_deny INT DEFAULT 0,
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS wish (
 CREATE TABLE IF NOT EXISTS comment (
     comment_id INT GENERATED ALWAYS AS IDENTITY,
     comment_text VARCHAR(500) NOT NULL,
-    created_at TIMESTAMP,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
     wish_id INT NOT NULL,
     parent_id INT,
     votes_agree INT DEFAULT 0,

@@ -1,8 +1,7 @@
-const e = require("cors");
 const Wish = require("../models/wish");
 
 async function index (req, res) {
-    const { limit, offset, } = req.query;
+    const { limit, offset } = req.query;
     try {
         const data = await Wish.getAll(limit, offset);
         res.json(data);
@@ -70,6 +69,9 @@ async function edit (req, res) {
 async function create (req, res) {
     const { text } = req.body;
     try {
+        if (typeof text != "string" || text.length < 1) {
+            throw new Error("Cannot create an empty wish.");
+        }
         const data = await Wish.create(text);
         res.status(201).json(data);
     } catch (err) {

@@ -38,7 +38,7 @@ class Wish {
     static async create(text) {
         const res = await db.query("INSERT INTO wish (wish_text) VALUES ($1) RETURNING *;", [text]);
         if (res.rows.length != 1) {
-            throw new Error("Unable to locate wish.")
+            throw new Error("Unable to create wish.")
         }
         return new Wish(res.rows[0]);
     }

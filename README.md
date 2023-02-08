@@ -21,7 +21,17 @@ With these variables in place, the project can be run with `npm run dev`.
 
 | Route | Method | Response |
 | --- | --- | --- |
-| `/` | `GET` | A JSON object describing the API |
+| `/` | `GET` | API welcome message |
+| `/futureproof` | `GET` | Easter egg |
+| `/tags` | `GET` | List of all tags |
+| `/tags` | `POST` | Create a new tag |
+| `/wishes` | `GET` | List of all wishes |
+| `/wishes` | `POST` | Create a new wish |
+| `/wishes/:id` | `GET` | View specific wish |
+| `/wishes/:id` | `PATCH` | Edit specific wish |
+| `/wishes/:id/comments` | `GET` | Get all comments for a specific wish |
+| `/wishes/:id/comments` | `POST` | Create a new comment on a specific wish |
+| `/wishes/:id/comments/:id` | `GET` | View a specific comment on a specific wish |
 
 ## Data
 

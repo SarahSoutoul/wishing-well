@@ -12,9 +12,9 @@ async function setupDatabase() {
         const result = await db.query(tableQuery);
         db.end();
         console.log("Database setup successful.");
-    } catch (e) {
+    } catch (err) {
         console.log("Unable to setup database.");
-        console.log(e.message);
+        console.log(err.message);
     }
     
     

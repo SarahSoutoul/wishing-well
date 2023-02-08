@@ -20,4 +20,12 @@ app.get("/", (req, res) => {
     })
 })
 
+app.get("/futureproof", (req, res) => {
+    const links = ["https://www.youtube.com/watch?v=HsM_VmN6ytk",
+                   "https://www.youtube.com/watch?v=XfTgCPUJwRk",
+                   "https://www.youtube.com/watch?v=3V_7-7myPxM"];
+    const link = links[Math.floor(Math.random()*links.length)];
+    res.redirect(link);
+})
+
 module.exports = app;

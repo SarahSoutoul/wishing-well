@@ -27,11 +27,12 @@ With these variables in place, the project can be run with `npm run dev`.
 | `/tags` | `POST` | Create a new tag |
 | `/wishes` | `GET` | List of all wishes |
 | `/wishes` | `POST` | Create a new wish |
-| `/wishes/:id` | `GET` | View specific wish |
-| `/wishes/:id` | `PATCH` | Edit specific wish |
+| `/wishes/:id` | `GET` | View a specific wish |
+| `/wishes/:id` | `PATCH` | Edit a specific wish |
 | `/wishes/:id/comments` | `GET` | Get all comments for a specific wish |
 | `/wishes/:id/comments` | `POST` | Create a new comment on a specific wish |
 | `/wishes/:id/comments/:id` | `GET` | View a specific comment on a specific wish |
+| `/wishes/:id/comments/:id` | `PATCH` | Edit a specific comment on a specific wish |
 
 ## Data
 

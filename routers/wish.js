@@ -9,6 +9,6 @@ wishRouter.get("/", index);
 wishRouter.post("/", create);
 wishRouter.get("/:id", show);
 wishRouter.patch("/:id", edit);
-wishRouter.use("/:id/comments", commentRouter);
+wishRouter.use("/", commentRouter);
 
 module.exports = wishRouter;
